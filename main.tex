@@ -5,8 +5,11 @@
 
 \usepackage[utf8x]{inputenc}
 \usepackage{lmodern,textcomp}
-% \usepackage{import}
-\usepackage{init}
+\usepackage{url}
+\usepackage{parskip} 	
+\RequirePackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[left=1cm, right=1cm, bottom=1cm, top=1cm]{geometry} %scale=0.9 was used before but bottom margin was a bit high
 \usepackage{ifthen}
 %for lists within experience section
 \usepackage{enumitem}
@@ -23,6 +26,8 @@
 \usepackage{fontawesome5}
 %debug page outer frames
 %\usepackage{showframe}
+
+\colorlet{body}{black!80!white}
 
 % ------
 % Header 
@@ -68,6 +73,11 @@
 %----------------------------------------------------------------------------------------
 %	CUSTOM COMMANDS
 %----------------------------------------------------------------------------------------
+\newcommand{\truefalse}[2]{%
+    \newboolean{#1}%
+    \ifthenelse{\equal{#2}{T}}{\setboolean{#1}{true}}{\setboolean{#1}{false}}
+}
+
 \newcommand{\cventry}[5]{%
     \begin{tabularx}{\linewidth}{ L{0.65\linewidth} R{0.3\linewidth} }
       \textbf{#1} & #2\\
