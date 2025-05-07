@@ -19,10 +19,6 @@
 % Style
 % ------
 
-% Set the main text color to 80% black (dark gray)
-\definecolor{bodycolor}{RGB}{248,250,252}
-\colorlet{body}{bodycolor}
-
 % Set the default font to sans-serif for the entire document
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -32,10 +28,17 @@
 % Remove paragraph indentation throughout the document
 \setlength{\parindent}{0pt}
 
+% Set the background color
+\definecolor{backgroundcolor}{RGB}{248,250,252}
+\colorlet{body}{backgroundcolor}
+
+\definecolor{textcolor}{RGB}{15,23,42}
+\colorlet{text}{textcolor}
+
 % Define a color for hyperlinks
 % & configure hyperlinks to use the defined color and other properties
 \definecolor{linkcolour}{RGB}{0,51,102}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\hypersetup{colorlinks,breaklinks,urlcolor=textcolor,linkcolor=textcolor}
 
 % Define custom column types for tables:
 % L = Left-aligned column with specified width
@@ -55,8 +58,7 @@
 %----------
 \newcommand{\cventry}[5]{%
     \begin{tabularx}{\linewidth}{ L{0.65\linewidth} R{0.3\linewidth} }
-      \textbf{#1} & #2\\
-      #3 &\\[3pt]
+      \textbf{#1, #2} & #3 \\[4pt]
       \multicolumn{2}{@{}X@{}}{%
         \begin{minipage}[t]{0.97\textwidth}
           \begin{itemize}[nosep, leftmargin=2em, itemsep=4pt]
@@ -83,9 +85,9 @@
 \begin{tabularx}{\linewidth}{R{0.3\linewidth} C{0.3\linewidth} L{0.3\linewidth}}
 &\huge{\textbf{Rowan Molony}}& \\[7.5pt]
 
-\href{tel:+353862120533}{\raisebox{-0.05\height}\faMobile \ +353 86 212 0533} &
-\href{mailto:rowanmolony@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ rowanmolony@gmail.com} &
-\href{https://linkedin.com/in/rowanmolony}{\raisebox{-0.05\height}\faLinkedin\ rowanmolony} \\
+\href{tel:+353862120533}{\raisebox{-0.05\height}\faMobile \ \underline{+353 86 212 0533}} &
+\href{mailto:rowanmolony@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ \underline{rowanmolony@gmail.com}} &
+\href{https://linkedin.com/in/rowanmolony}{\raisebox{-0.05\height}\faLinkedin\ \underline{rowanmolony}} \\
 \end{tabularx}
 
 \vspace{10pt}
@@ -113,63 +115,72 @@
 %------------
 \section{Experience}
 
-\cventry{Thalora Ltd\skillref{4}}
-    {Dec 2023 - Present}
-    {Co-Founder \& Software Engineer}
-    {
-        \item 
-        I formed Thalora Ltd through which I continued working with MRP on a consultancy basis.
-        \vspace{5pt}
-    }
+\cventry
+  {Software Engineer / Founder}
+  {Thalora Ltd\skillref{4}}
+  {Dec 2023 - Present}
+  {
+      \item 
+      I formed Thalora Ltd through which I continued working with MRP on a consultancy basis.
+      \vspace{5pt}
+  }
 
-\cventry{PowerScope Ltd\skillref{3}}
-    {Jul 2020 - Feb 2022}
-    {Co-Founder \& Software Engineer}
-    {
-        \item
-        Terry McGrenaghan \& I initially formed PowerScope Ltd to empower solar panel installers to model the investment case for battery storage for commercial projects, with the help of our software, without having to rely on external consultants.
-        In so doing I (a) built a linear optimisation framework (in Python) tailored for timeseries data \& a battery dispatch model on top of it, (c) a financial modelling framework \& model, (c) an interactive web application on the AWS Amplify stack.
-    }
+\cventry
+  {Software Engineer / Co-Founder}
+  {PowerScope Ltd\skillref{3}}
+  {Jul 2020 - Feb 2022}
+  {
+      \item
+      Terry McGrenaghan \& I initially formed PowerScope Ltd to empower solar panel installers to model the investment case for battery storage for commercial projects, with the help of our software, without having to rely on external consultants.
+      \item
+      In so doing, I (a) built a linear optimisation framework (in Python) tailored for timeseries data \& a battery dispatch model on top of it, (c) a financial modelling framework \& model, (c) an interactive web application on the AWS Amplify stack.
+  }
 
-\cventry{Mainstream Renewable Power (MRP)\skillref{2}}
-    {Oct 2021 - Dec 2023}
-    {Web Developer}
-    {
-        \item
-        Over several years I fully rebuilt the backend of the MRP data platform, StationManager, to resolve its reliability issues.
-        In so doing I (a) captured the developer environment, (b) grew a test suite (unit, integration, \& end to end) to cover common usage patterns in continuous integration, (c) simplified the system's architecture by removing, combining, or replacing its constituent components with more appropriate tools. The resulting system was far more robust, understandable and maintainable (including thousands of lines of code smaller) while still achieiving the same functionality.
-    }
+\cventry
+  {Web Developer}
+  {Mainstream Renewable Power (MRP)\skillref{2}}
+  {Oct 2021 - Dec 2023}
+  {
+      \item
+      Over several years I fully rebuilt the backend of the MRP data platform, StationManager, to resolve its reliability issues.
+      \item
+      In so doing, I (a) captured the developer environment, (b) grew a test suite (unit, integration, \& end to end) to cover common usage patterns in continuous integration, (c) simplified the system's architecture by removing, combining, or replacing its constituent components with more appropriate tools. The resulting system was far more robust, understandable and maintainable (including thousands of lines of code smaller) while still achieiving the same functionality.
+  }
 
-\cventry{Codema\skillref{1}}
-    {Aug 2019 - Oct 2021}
-    {Data Analyst}
-    {
-        \item 
-        I tasked with modelling Dublin's built environment, as part of the Dublin Region Energy Masterplan, to enable estimating the impact of energy policy on Dublin's energy system.
-        In doing so, I built my own toolkit and energy model in the open \href{https://github.com/codema-dev/projects}{on GitHub} on top of open source libraries.
-    }
+\cventry
+  {Data Analyst}
+  {Codema\skillref{1}}
+  {Aug 2019 - Oct 2021}
+  {
+      \item 
+      I tasked with modelling Dublin's built environment, as part of the Dublin Region Energy Masterplan, to enable estimating the impact of energy policy on Dublin's energy system.
+      \item
+      In so doing, I built my own toolkit and energy model in the open \href{https://github.com/codema-dev/projects}{\underline{on GitHub}} on top of open source libraries.
+  }
 
 %-----------
 % Education
 %-----------
 \section{Education}
 
-\cventry{Trinity College, Dublin}
-    {Sept 2014 - June 2019}
-    {Bachelor's \& Master's Degree in Mechanical \& Manufacturing Engineering}
-    {
-        \item 
-        In 2018, I graduated my Bachelor's with 1st class honours (gold medal).
-        The degree remained multidisciplinary for two years, which exposed
-        me to multiple courses in programming languages C++ \& Matlab.
+\cventry
+  {BAI \& MAI in Mechanical Engineering}
+  {Trinity College, Dublin}
+  {Sept 2014 - June 2019}
+  {
+      \item 
+      In 2018, I graduated my Bachelor's (BAI) with 1st class honours (gold medal).
+      \item
+      The degree remained multidisciplinary for two years, which exposed
+      me to multiple courses in programming languages C++ \& Matlab.
 
-        \item 
-        In 2019, I completed a 1st class honours Masters also in Trinity College,
-        again in mechanical engineering, specialising in energy systems.
-        I was one of eight people selected to participate in a one year
-        user-centered design project during my Masters year.
-        My team of four were funded by a corporate sponsor to explore an open-ended design problem.
-    }
+      \item 
+      In 2019, I completed a 1st class honours Masters (MAI), including a thesis in energy systems analysis.
+      \item
+      I was one of eight people selected to participate in a one year
+      user-centered design project during my Masters year.
+      My team of four were funded by a corporate sponsor to explore an open-ended design problem.
+  }
 
 \end{document}
 
