@@ -14,48 +14,49 @@
 \usepackage{fontawesome5} % for social icons
 \usepackage[unicode, draft=false]{hyperref} % for hyperlinks
 
+% ------
+% Style
+% ------
+
+% Set the main text color to 80% black (dark gray)
 \colorlet{body}{black!80!white}
 
-% ------
-% Header 
-% ------
+% Set the default font to sans-serif for the entire document
+\renewcommand{\familydefault}{\sfdefault}
 
-%----------------------------------------------------------------------------------------
-%	DEFINE DIFFERENT TABLE COLUMN TYPES
-%----------------------------------------------------------------------------------------
+% Remove page numbers and headers/footers
+\pagestyle{empty}
+
+% Remove paragraph indentation throughout the document
+\setlength{\parindent}{0pt}
+
+% Define a dark green color for hyperlinks
+% & configure hyperlinks to use the defined color and other properties
+\definecolor{linkcolour}{RGB}{21,71,52}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+% Define custom column types for tables:
+% L = Left-aligned column with specified width
+% C = Center-aligned column with specified width
+% R = Right-aligned column with specified width
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
-% for dashed horizontal line
-\setlength{\parindent}{0pt}
-\newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
-
-% centered version of 'X' col. type
-% \newcolumntype{M}{>{\centering\arraybackslash}X} 
-
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-% Itemized list width
+% Define a custom length for itemized lists width
+% & set the itemized list width to 90% of the text width
 \newlength{\itemwidth}
 \setlength{\itemwidth}{0.9\textwidth}
-% % Itemized list separation
+
+% Define a custom length for spacing between items in lists\
+% & set the spacing between list items
 \newlength{\itemsepar}
 \setlength{\itemsepar}{4pt}
 
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
+% Format section headings: large font, left-aligned, with a horizontal rule below
+% & set the spacing around section headings: left, above, below
 \titleformat{\section}{\Large\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{5pt}{5pt}
-
-\definecolor{linkcolour}{RGB}{21,71,52}%{0,0.2,0.6} %Original
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-
-% Sans Serif setting
-\renewcommand{\familydefault}{\sfdefault}
-
-\pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
 %	CUSTOM COMMANDS
