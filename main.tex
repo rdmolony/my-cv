@@ -1,0 +1,241 @@
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage{lmodern,textcomp}
+% \usepackage{import}
+\usepackage{init}
+\usepackage{ifthen}
+%for lists within experience section
+\usepackage{enumitem}
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+%for social icons
+\usepackage{fontawesome5}
+%debug page outer frames
+%\usepackage{showframe}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%   BOOL SECTION ******************
+%----------------------------------------------------------------------------------------
+
+\truefalse{coding}{F}
+\truefalse{eng}{T}
+\truefalse{admin}{F}
+\truefalse{hosp}{F}
+\truefalse{edu}{F}
+\truefalse{labour}{F}
+
+\newcommand{\phonenumber}{+353 86 212 0533}
+
+% ------
+% Header 
+% ------
+
+%----------------------------------------------------------------------------------------
+%	DEFINE DIFFERENT TABLE COLUMN TYPES
+%----------------------------------------------------------------------------------------
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% for dashed horizontal line
+\setlength{\parindent}{0pt}
+\newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+
+% centered version of 'X' col. type
+% \newcolumntype{M}{>{\centering\arraybackslash}X} 
+
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+% Itemized list width
+\newlength{\itemwidth}
+\setlength{\itemwidth}{0.9\textwidth}
+% % Itemized list separation
+\newlength{\itemsepar}
+\setlength{\itemsepar}{4pt}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{5pt}{5pt}
+
+
+\definecolor{linkcolour}{RGB}{21,71,52}%{0,0.2,0.6} %Original
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+% Sans Serif setting
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{empty}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+\begin{tabularx}{\linewidth}{R{0.3\linewidth} C{0.3\linewidth} L{0.3\linewidth}}
+&\huge{\textbf{Rowan Molony}}& \\[7.5pt]
+
+\raisebox{-0.05\height}\faMobile \ +353 86 212 0533 &
+\href{mailto:rowanmolony@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ rowanmolony@gmail.com} &
+\href{https://linkedin.com/in/rowanmolony}{\raisebox{-0.05\height}\faLinkedin\ rowanmolony} \\
+\end{tabularx}
+%----------------------------------------------------------------------------------------
+% SUMMARY
+%----------------------------------------------------------------------------------------
+% \begin{minipage}{0.8\textwidth}
+%     Mechanical Engineer with over two years' experience in the construction industry, specialising in commercial projects. Proficient in a wide range of activities, including design, submitting planning applications, project tendering and bidding, project management, and quality assurance. Demonstrated ability to manage various aspects of projects from concept to completion, ensuring compliance with industry standards.
+% \end{minipage}
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ L{0.65\linewidth} R{0.3\linewidth} }
+
+\textbf{Thalora Ltd} & Dublin, Ireland\\
+Co-Founder \& Software Engineer (Dec 2023 - Present) &\\[3pt]
+\multicolumn{2}{@{}X@{}}{%
+\begin{minipage}[t]{\itemwidth}
+    \begin{itemize}[nosep, leftmargin=2em, itemsep=\itemsepar]
+        \item TODO
+    \end{itemize}
+\end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ L{0.65\linewidth} R{0.3\linewidth} }
+
+\textbf{PowerScope Ltd} & Dublin, Ireland\\
+Co-Founder \& Software Enegineer (Jul 2020 - Feb 2022) &\\[3pt]
+\multicolumn{2}{@{}X@{}}{%
+\begin{minipage}[t]{\itemwidth}
+    \begin{itemize}[nosep, leftmargin=2em, itemsep=\itemsepar]
+        \item  TODO
+    \end{itemize}
+\end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ L{0.65\linewidth} R{0.3\linewidth} }
+\textbf{Mainstream Renewable Power} & Dublin, Ireland\\ 
+Web Developer (Oct 2021 - Dec 2023) &\\[3pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\itemwidth}
+    \begin{itemize}[nosep, leftmargin=2em, itemsep=\itemsepar]
+        \item TODO
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ L{0.65\linewidth} R{0.3\linewidth} }
+\textbf{Codema} & Dublin, Ireland\\ 
+Data Analyst (Aug 2019 - Oct 2021) &\\[3pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\itemwidth}
+    \begin{itemize}[nosep, leftmargin=2em, itemsep=\itemsepar]
+        \item TODO
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}%
+\ifthenelse{ \boolean{coding}}{%
+\begin{tabularx}%
+{\linewidth}{ L{0.7\linewidth} R{0.25\linewidth}}
+    %
+    \textbf{Complete Data Science Bootcamp} & Online\\
+    Udemy (Dec 2019 - Apr 2020) &\\
+\end{tabularx}
+}{}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabularx}%
+{\linewidth}{ L{0.7\linewidth} R{0.25\linewidth}}
+    %
+    \textbf{Master's Mechanical \& Manufacturing Engineering} - First Class Honours & Dublin, Ireland\\
+    Trinity College Dublin (Sept 2018 - June 2019) &
+    \\
+    [2pt]
+    %
+    \multicolumn{2}{@{}X@{}}{
+        \begin{minipage}[t]{\itemwidth}
+            \begin{itemize}%
+            [nosep, leftmargin=2em, itemsep=2pt]
+                % \item
+                % \textbf{Honours:} First Class (1:1)
+                \item TODO
+            \end{itemize}
+        \end{minipage}
+    }%
+\end{tabularx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tabularx}%
+{\linewidth}{ L{0.7\linewidth} R{0.25\linewidth}}
+    %
+    \textbf{Bachelor's Mechanical \& Manufacturing Engineering} - First Class Honours & Dublin, Ireland\\
+    Trinity College Dublin (Sept 2014 - June 2018)&
+     \\[2pt]
+    \multicolumn{2}{@{}X@{}}{
+        \begin{minipage}[t]{\itemwidth}
+            \begin{itemize}%
+            [nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+                \item TODO
+            \end{itemize}
+        \end{minipage}
+    }%
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Skills \& Achievements}
+
+\begin{tabularx}%
+{\linewidth}{ L{0.2\linewidth} L{0.7\linewidth}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Programming  &
+\normalsize{
+TODO}
+\\[\itemsepar]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Qualifications &
+Manual Driving License
+\\[\itemsepar]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Languages &
+English (\textbf{Fluent}), French (\textbf{B1/B2})%
+% \hspace{1cm}
+% \textbf{Basic}; Irish, Italian, Russian
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifthenelse{\boolean{eng}}{%
+\\[\itemsepar]
+Personal &
+TODO.\\
+}{}%
+%\footnote{\href{https://www.hsa.ie/eng/your_industry/construction/construction_duty_holders/project_supervisor_design_process/}{[Link to PSDP information]}}
+\end{tabularx}
+
+\end{document}

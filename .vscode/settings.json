@@ -1,0 +1,27 @@
+{
+    "latex-workshop.latex.tools": [
+      {
+        "name": "latexmk",
+        "command": "nix",
+        "args": [
+          "run",
+          ".#latexmk",
+          "--",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-lualatex",
+          "-output-directory=./out",
+          "%DOC%"
+        ]
+      }
+    ],
+    "latex-workshop.latex.recipes": [
+      {
+        "name": "latexmk",
+        "tools": ["latexmk"]
+      }
+    ],
+    "latex-workshop.latex.outDir": "./out"
+  }
+  
