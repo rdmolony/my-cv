@@ -7,23 +7,25 @@
 \usepackage[utf8x]{inputenc} % for character encoding
 \usepackage{lmodern,textcomp} % to select font type
 \usepackage[usenames,dvipsnames]{xcolor} % for colored links and divider
-\usepackage[left=1cm, right=1cm, bottom=1cm, top=1cm]{geometry} % for adding a page margin
 \usepackage{enumitem} % for \item lists
 \usepackage{tabularx} % for sections
 \usepackage{titlesec} % for section titles
 \usepackage{ifthen} % to enable if else statements
 \usepackage{fontawesome5} % for social icons
 \usepackage[unicode, draft=false]{hyperref} % for hyperlinks
+\usepackage{fancyhdr} % for header & footer
 
 % ------
 % Style
 % ------
 
+\usepackage[left=1cm, right=1cm, bottom=2cm, top=2cm]{geometry} % for adding a page margin
+
 % Set the default font to sans-serif for the entire document
 \renewcommand{\familydefault}{\sfdefault}
 
 % Remove page numbers and headers/footers
-\pagestyle{empty}
+\pagestyle{fancy}
 
 % Remove paragraph indentation throughout the document
 \setlength{\parindent}{0pt}
@@ -73,24 +75,27 @@
 % Define skill categories and references
 \newcommand{\skillref}[1]{\textsuperscript{\textit{#1}}}
 
+% ----------------
+% Header & Footer
+% ----------------
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancyhead[C]{%
+  \huge{\textbf{Rowan Molony}}
+}
+\fancyhead[R]{%
+  \href{mailto:rowanmolony@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ \underline{rowanmolony@gmail.com}} \\
+  \href{https://linkedin.com/in/rowanmolony}{\raisebox{-0.05\height}\faLinkedin\ \underline{rowanmolony}} \\
+  \href{https://github.com/rdmolony/my-cv}{\raisebox{-0.05\height}\faGithub\ \underline{rdmolony}}
+}
+
 
 % ---------------------------------------------------------
 % Document
 % ---------
 \begin{document}
-
-%-------
-% Title
-%-------
-\begin{tabularx}{\linewidth}{R{0.3\linewidth} C{0.3\linewidth} L{0.3\linewidth}}
-&\huge{\textbf{Rowan Molony}}& \\[7.5pt]
-
-\href{tel:+353862120533}{\raisebox{-0.05\height}\faMobile \ \underline{+353 86 212 0533}} &
-\href{mailto:rowanmolony@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ \underline{rowanmolony@gmail.com}} &
-\href{https://linkedin.com/in/rowanmolony}{\raisebox{-0.05\height}\faLinkedin\ \underline{rowanmolony}} \\
-\end{tabularx}
-
-\vspace{10pt}
 
 %--------
 % Skills
@@ -121,7 +126,7 @@
   {Jan 2024 - Present}
   {
       \item 
-      I formed Thalora Ltd through which I continued working with MRP on a consultancy basis.
+      I formed Thalora Ltd through which I continued working with Mainstream Renewable Power (see below) on a consultancy basis.
       \vspace{5pt}
   }
 
@@ -131,9 +136,9 @@
   {Aug 2024 - Apr 2025}
   {
       \item
-      Terry McGrenaghan \& I initially formed PowerScope Ltd to create a software tool to empower solar panel installers to assess the investment case for battery storage. In April 2025, though we had made good progress, for a variety of reasons, we decided not to continue with PowerScope.
-      \item
-      In so doing, I (a) built a linear optimisation framework (in Python) tailored for timeseries data \& a battery dispatch model on top of it, (c) a financial modelling framework \& model, (c) an interactive web application on the AWS Amplify stack.
+      Terry McGrenaghan \& I initially formed PowerScope Ltd to create a software tool to empower solar panel installers to assess the investment case for battery storage.
+      \item 
+      I (a) built a linear optimisation framework tailored for timeseries data \& a battery dispatch model on top of it, (c) a financial modelling framework \& model, (c) an interactive web application on the AWS Amplify stack.
   }
 
 \cventry
@@ -143,8 +148,8 @@
   {
       \item
       I fully rebuilt the backend of the MRP data platform, StationManager, to resolve its reliability issues.
-      \item
-      In so doing, I (a) captured the developer environment, (b) grew a test suite (unit, integration, \& end to end) from nil to cover common usage patterns in continuous integration, (c) simplified the system's architecture by removing, combining, or replacing its constituent components. The resulting system was far more robust, understandable and maintainable while continuing to enable the same functionality.
+      \item 
+      I (a) captured the developer environment, (b) grew a test suite (unit, integration, \& end to end) from nil to cover common usage patterns in continuous integration, (c) simplified the system's architecture by removing, combining, or replacing its constituent components. The resulting system was far more robust, understandable and maintainable while continuing to enable the same functionality.
   }
 
 \cventry
@@ -153,9 +158,7 @@
   {Aug 2019 - Oct 2021}
   {
       \item 
-      I was tasked with modelling Dublin's built environment (as part of the Dublin Region Energy Masterplan) to enable estimating the impact of energy policy on Dublin's energy system.
-      \item
-      In so doing, I built my own toolkit and energy model \href{https://github.com/codema-dev/projects}{\underline{in the open on GitHub}} on top of open source libraries.
+      I was tasked with modelling Dublin's built environment (as part of the Dublin Region Energy Masterplan) to enable estimating the impact of energy policy on Dublin's energy system. I built my own toolkit and energy model \href{https://github.com/codema-dev/projects}{\underline{in the open on GitHub}} on top of open source libraries.
   }
 
 %-----------
@@ -164,16 +167,23 @@
 \section{Education}
 
 \cventry
-  {BAI \& MAI in Mechanical Engineering}
+  {Master of Mechanical Engineering}
   {Trinity College, Dublin}
-  {Sept 2014 - June 2019}
+  {Sept 2018 - June 2019}
   {
     \item 
-    In 2018, I graduated my Bachelor's (BAI) with 1st class honours (gold medal). The degree remained multidisciplinary for two years, which exposed
-    me to multiple courses in the programming languages C++ \& Matlab.
+    I graduated my Master's degree with 1st class honours, including a thesis in energy systems analysis. I was one of eight people selected to participate in a one year user-centered design project - funded by a corporate sponsor.
+    \vspace{4pt}
+  }
 
+  \cventry
+  {Bachelor of Mechanical Engineering}
+  {Trinity College, Dublin}
+  {Sept 2014 - June 2018}
+  {
     \item 
-    In 2019, I graduated my Master's (MAI) with a 1st class honours, including a thesis in energy systems analysis. I was one of eight people selected to participate in a one year user-centered design project - funded by a corporate sponsor.
+    I graduated my Bachelor's degree with 1st class honours (gold medal). The degree remained multidisciplinary for two years, which exposed
+    me to multiple courses in the programming languages C++ \& Matlab.
   }
 
 \end{document}
