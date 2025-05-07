@@ -3,29 +3,16 @@
 %----------------------------------------------------------------------------------------
 \documentclass[a4paper,11pt]{article}
 
-\usepackage[utf8x]{inputenc}
-\usepackage{lmodern,textcomp}
-\usepackage{url}
-\usepackage{parskip} 	
-\RequirePackage{color}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[left=1cm, right=1cm, bottom=1cm, top=1cm]{geometry} %scale=0.9 was used before but bottom margin was a bit high
-\usepackage{ifthen}
-%for lists within experience section
-\usepackage{enumitem}
-%to prevent spillover of tabular into next pages
-\usepackage{supertabular}
-\usepackage{tabularx}
-%custom \section
-\usepackage{titlesec}				
-\usepackage{multicol}
-\usepackage{multirow}
-%Setup hyperref package, and colours for links
-\usepackage[unicode, draft=false]{hyperref}
-%for social icons
-\usepackage{fontawesome5}
-%debug page outer frames
-%\usepackage{showframe}
+\usepackage[utf8x]{inputenc} % for character encoding
+\usepackage{lmodern,textcomp} % to select font type
+\usepackage[usenames,dvipsnames]{xcolor} % for colored links and divider
+\usepackage[left=1cm, right=1cm, bottom=1cm, top=1cm]{geometry} % for adding a page margin
+\usepackage{enumitem} % for \item lists
+\usepackage{tabularx} % for sections
+\usepackage{titlesec} % for section titles
+\usepackage{ifthen} % to enable if else statements
+\usepackage{fontawesome5} % for social icons
+\usepackage[unicode, draft=false]{hyperref} % for hyperlinks
 
 \colorlet{body}{black!80!white}
 
@@ -73,11 +60,6 @@
 %----------------------------------------------------------------------------------------
 %	CUSTOM COMMANDS
 %----------------------------------------------------------------------------------------
-\newcommand{\truefalse}[2]{%
-    \newboolean{#1}%
-    \ifthenelse{\equal{#2}{T}}{\setboolean{#1}{true}}{\setboolean{#1}{false}}
-}
-
 \newcommand{\cventry}[5]{%
     \begin{tabularx}{\linewidth}{ L{0.65\linewidth} R{0.3\linewidth} }
       \textbf{#1} & #2\\
