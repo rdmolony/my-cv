@@ -45,16 +45,6 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
-% Define a custom length for itemized lists width
-% & set the itemized list width to 90% of the text width
-\newlength{\itemwidth}
-\setlength{\itemwidth}{0.9\textwidth}
-
-% Define a custom length for spacing between items in lists\
-% & set the spacing between list items
-\newlength{\itemsepar}
-\setlength{\itemsepar}{4pt}
-
 % Format section headings: large font, left-aligned, with a horizontal rule below
 % & set the spacing around section headings: left, above, below
 \titleformat{\section}{\Large\raggedright}{}{0em}{}[\titlerule]
@@ -68,8 +58,8 @@
       \textbf{#1} & #2\\
       #3 &\\[3pt]
       \multicolumn{2}{@{}X@{}}{%
-        \begin{minipage}[t]{\itemwidth}
-          \begin{itemize}[nosep, leftmargin=2em, itemsep=\itemsepar]
+        \begin{minipage}[t]{0.97\textwidth}
+          \begin{itemize}[nosep, leftmargin=2em, itemsep=4pt]
             #4
           \end{itemize}
         \end{minipage}
