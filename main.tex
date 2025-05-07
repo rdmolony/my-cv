@@ -24,19 +24,6 @@
 %debug page outer frames
 %\usepackage{showframe}
 
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%   BOOL SECTION ******************
-%----------------------------------------------------------------------------------------
-
-\truefalse{coding}{F}
-\truefalse{eng}{T}
-\truefalse{admin}{F}
-\truefalse{hosp}{F}
-\truefalse{edu}{F}
-\truefalse{labour}{F}
-
-\newcommand{\phonenumber}{+353 86 212 0533}
-
 % ------
 % Header 
 % ------
@@ -69,7 +56,6 @@
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{5pt}{5pt}
-
 
 \definecolor{linkcolour}{RGB}{21,71,52}%{0,0.2,0.6} %Original
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
@@ -160,14 +146,14 @@ Data Analyst (Aug 2019 - Oct 2021) &\\[3pt]
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}%
-\ifthenelse{ \boolean{coding}}{%
+
 \begin{tabularx}%
 {\linewidth}{ L{0.7\linewidth} R{0.25\linewidth}}
     %
     \textbf{Complete Data Science Bootcamp} & Online\\
     Udemy (Dec 2019 - Apr 2020) &\\
 \end{tabularx}
-}{}%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{tabularx}%
@@ -230,12 +216,9 @@ English (\textbf{Fluent}), French (\textbf{B1/B2})%
 % \hspace{1cm}
 % \textbf{Basic}; Irish, Italian, Russian
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifthenelse{\boolean{eng}}{%
 \\[\itemsepar]
 Personal &
 TODO.\\
-}{}%
-%\footnote{\href{https://www.hsa.ie/eng/your_industry/construction/construction_duty_holders/project_supervisor_design_process/}{[Link to PSDP information]}}
 \end{tabularx}
 
 \end{document}
