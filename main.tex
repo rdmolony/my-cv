@@ -79,6 +79,18 @@
     \vspace{5pt}
 }
 
+% Define a reference command that links to the label
+% & add a counter for experience entries
+\newcounter{experienceCounter}
+\newcommand{\experience}[1]{
+  \refstepcounter{experienceCounter}
+  \label{#1}{[\theexperienceCounter]}
+}
+\newcommand{\skillref}[1]{\textsuperscript{\ref{#1}}}
+
+% Define a comma in superscript for separating references
+\newcommand{\ssep}{\textsuperscript{,\kern-0.1em}}
+
 % ----------------
 % Header & Footer
 % ----------------
@@ -108,7 +120,7 @@
 
 \cventry
   {Software Engineer / Founder}
-  {Thalora Ltd\label{TL}}
+  {Thalora Ltd \experience{TL}}
   {Jan 2024 - Present}
   {
       \item 
@@ -118,7 +130,7 @@
 
 \cventry
   {Software Engineer / Co-Founder}
-  {PowerScope Ltd\label{PS}}
+  {PowerScope Ltd \experience{PS}}
   {Aug 2024 - Apr 2025}
   {
       \item
@@ -129,7 +141,7 @@
 
 \cventry
   {Web Developer}
-  {Mainstream Renewable Power (MRP)\label{MRP}}
+  {Mainstream Renewable Power (MRP) \experience{MRP}}
   {Oct 2021 - Dec 2023}
   {
       \item
@@ -140,7 +152,7 @@
 
 \cventry
   {Data Analyst}
-  {Codema\label{CD}}
+  {Codema \experience{CD}}
   {Aug 2019 - Oct 2021}
   {
       \item 
@@ -182,14 +194,37 @@
 \begin{minipage}[t]{0.97\textwidth}
   \begin{itemize}[nosep, leftmargin=2em, itemsep=4pt]
 
-      \item \textbf{Backend}: Server-Side Rendered HTML (Django, HTMX), REST APIs (Django Rest Framework), Relational Databases (MySQL, Postgres, TimescaleDB), Task Queues (Dramatiq, Redis), GraphQL (AWS AppSync), Document Stores (AWS DynamoDB)
+      \item \textbf{Backend}:
+      Server-Side Rendered HTML (Django, HTMX)\skillref{TL}\ssep\skillref{MRP},
+      REST APIs (Django Rest Framework)\skillref{TL}\ssep\skillref{MRP},
+      Relational Databases (MySQL, Postgres, TimescaleDB)\skillref{TL}\ssep\skillref{MRP},
+      Task Queues (Dramatiq, Redis)\skillref{TL}\ssep\skillref{MRP},
+      GraphQL (AWS AppSync)\skillref{PS},
+      Document Stores (AWS DynamoDB)\skillref{PS}
 
-      \item \textbf{Frontend}: Single Page Applications (React), CSS (TailwindCSS), Component Tests (StorybookJS)
-      \item \textbf{Good Practice}: Version Control (git), Code Collaboration (GitHub), Test-Driven Development (pytest, Selenium, nbdev), Continuous Integration (GitHub Actions)
+      \item \textbf{Frontend}:
+      Single Page Applications (React)\skillref{PS},
+      CSS (TailwindCSS)\skillref{PS},
+      Component Tests (StorybookJS)\skillref{PS}
 
-      \item \textbf{Infrastructure}: Containerisation (Docker, Nix), Continuous Deployment (AWS Amplify), Infrastructure as Code (Terraform, AWS CDK)
+      \item \textbf{Good Practice}:
+      Version Control (git)\skillref{TL}\ssep\skillref{PS}\ssep\skillref{MRP}\ssep\skillref{CD},
+      Code Collaboration (GitHub)\skillref{TL}\ssep\skillref{PS}\ssep\skillref{MRP}\ssep\skillref{CD},
+      Test-Driven Development (pytest, Selenium, nbdev)\skillref{TL}\ssep\skillref{PS}\ssep\skillref{MRP}\ssep\skillref{CD},
+      Continuous Integration (GitHub Actions)\skillref{TL}\ssep\skillref{PS}\ssep\skillref{MRP}\ssep\skillref{CD}
 
-      \item \textbf{Data Analysis}: Linear Optimization (bespoke), Data Wrangling (Pandas), Workflow Orchestration (Ploomber, Prefect), Geospatial Analysis (GeoPandas), Machine Learning (scikit-learn), Network Analysis (networkx)
+      \item \textbf{Infrastructure}:
+      Containerisation (Docker, Nix)\skillref{TL}\ssep\skillref{PS}\ssep\skillref{MRP}\ssep\skillref{CD},
+      Continuous Deployment (AWS Amplify)\skillref{PS},
+      Infrastructure as Code (Terraform, AWS CDK)\skillref{PS}
+
+      \item \textbf{Data Analysis}:
+      Linear Optimization (bespoke)\skillref{CD},
+      Data Wrangling (Pandas)\skillref{CD},
+      Workflow Orchestration (Ploomber, Prefect)\skillref{CD},
+      Geospatial Analysis (GeoPandas)\skillref{CD},
+      Machine Learning (scikit-learn)\skillref{CD},
+      Network Analysis (networkx)\skillref{CD}
 
   \end{itemize}
 \end{minipage}
