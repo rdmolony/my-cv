@@ -4,6 +4,7 @@
 
 \documentclass[a4paper,11pt]{article}
 
+\usepackage{geometry} % for adding a page margin
 \usepackage{lmodern,textcomp} % to select font type
 \usepackage[dvipsnames]{xcolor} % for colored links and divider
 \usepackage{enumitem} % for \item lists
@@ -18,7 +19,7 @@
 % Style
 % ------
 
-\usepackage[left=1cm, right=1cm, bottom=2cm, top=2cm]{geometry} % for adding a page margin
+\geometry{left=1cm, right=1cm, bottom=2cm, top=3cm, headheight=44pt} % Set page dimensions
 
 % Set the default font to sans-serif for the entire document
 \renewcommand{\familydefault}{\sfdefault}
@@ -71,9 +72,6 @@
     \vspace{5pt}
 }
 
-% Define skill categories and references
-\newcommand{\skillref}[1]{\textsuperscript{\textit{#1}}}
-
 % ----------------
 % Header & Footer
 % ----------------
@@ -96,24 +94,6 @@
 % ---------
 \begin{document}
 
-%--------
-% Skills
-%--------
-
-\section{Skills}
-
-\begin{minipage}[t]{0.97\textwidth}
-  \begin{itemize}[nosep, leftmargin=2em, itemsep=4pt]
-      \item \textbf{Backend}: Server-Side Rendered HTML (Django, HTMX)\skillref{2,4}, REST APIs (Django Rest Framework)\skillref{2,4}, Relational Databases (MySQL, Postgres, TimescaleDB)\skillref{2,4}, Task Queues (Dramatiq, Redis)\skillref{2,4}, GraphQL (AWS AppSync)\skillref{3}, Document Stores (AWS DynamoDB)\skillref{3}
-      \item \textbf{Frontend}: Single Page Applications (React)\skillref{3}, CSS (TailwindCSS)\skillref{3}, Component Tests (StorybookJS)\skillref{3}
-      \item \textbf{Good Practice}: Version Control (git)\skillref{1,2,3,4}, Code Collaboration (GitHub)\skillref{1,2,3,4}, Test-Driven Development (pytest\skillref{1,2,4}, Selenium\skillref{2,4}, nbdev\skillref{3}), Continuous Integration (GitHub Actions)\skillref{1,2,3,4}
-      \item \textbf{Infrastructure}: Containerisation (Docker\skillref{1,2,3,4}, Nix\skillref{3}), Continuous Deployment (AWS Amplify)\skillref{3}, Infrastructure as Code (Terraform, AWS CDK)\skillref{3}
-      \item \textbf{Data Analysis}: Linear Optimization (bespoke)\skillref{3}, Data Wrangling (Pandas)\skillref{1}, Workflow Orchestration (Ploomber, Prefect)\skillref{1}, Geospatial Analysis (GeoPandas)\skillref{1}, Machine Learning (scikit-learn)\skillref{1}, Network Analysis (networkx)\skillref{1}
-  \end{itemize}
-\end{minipage}
-
-\vspace{10pt}
-
 %------------
 % Experience
 %------------
@@ -121,7 +101,7 @@
 
 \cventry
   {Software Engineer / Founder}
-  {Thalora Ltd\skillref{4}}
+  {Thalora Ltd\label{TL}}
   {Jan 2024 - Present}
   {
       \item 
@@ -131,7 +111,7 @@
 
 \cventry
   {Software Engineer / Co-Founder}
-  {PowerScope Ltd\skillref{3}}
+  {PowerScope Ltd\label{PS}}
   {Aug 2024 - Apr 2025}
   {
       \item
@@ -142,7 +122,7 @@
 
 \cventry
   {Web Developer}
-  {Mainstream Renewable Power (MRP)\skillref{2}}
+  {Mainstream Renewable Power (MRP)\label{MRP}}
   {Oct 2021 - Dec 2023}
   {
       \item
@@ -153,7 +133,7 @@
 
 \cventry
   {Data Analyst}
-  {Codema\skillref{1}}
+  {Codema\label{CD}}
   {Aug 2019 - Oct 2021}
   {
       \item 
@@ -181,10 +161,33 @@
   {Sept 2014 - June 2018}
   {
     \item 
-    I graduated my Bachelor's degree with 1st class honours (gold medal). The degree remained multidisciplinary for two years, which exposed
-    me to multiple courses in the programming languages C++ \& Matlab.
+    I graduated my Bachelor's degree with 1st class honours (gold medal). The degree remained multidisciplinary for two years, which exposed me to multiple courses in the programming languages C++ \& Matlab.
   }
 
+
+
+%--------
+% Skills
+%--------
+
+\section{Skills}
+
+\begin{minipage}[t]{0.97\textwidth}
+  \begin{itemize}[nosep, leftmargin=2em, itemsep=4pt]
+
+      \item \textbf{Backend}: Server-Side Rendered HTML (Django, HTMX), REST APIs (Django Rest Framework), Relational Databases (MySQL, Postgres, TimescaleDB), Task Queues (Dramatiq, Redis), GraphQL (AWS AppSync), Document Stores (AWS DynamoDB)
+
+      \item \textbf{Frontend}: Single Page Applications (React), CSS (TailwindCSS), Component Tests (StorybookJS)
+      \item \textbf{Good Practice}: Version Control (git), Code Collaboration (GitHub), Test-Driven Development (pytest, Selenium, nbdev), Continuous Integration (GitHub Actions)
+
+      \item \textbf{Infrastructure}: Containerisation (Docker, Nix), Continuous Deployment (AWS Amplify), Infrastructure as Code (Terraform, AWS CDK)
+
+      \item \textbf{Data Analysis}: Linear Optimization (bespoke), Data Wrangling (Pandas), Workflow Orchestration (Ploomber, Prefect), Geospatial Analysis (GeoPandas), Machine Learning (scikit-learn), Network Analysis (networkx)
+
+  \end{itemize}
+\end{minipage}
+
+% -------------
 \end{document}
 
 % ---------------------------------------------------------
