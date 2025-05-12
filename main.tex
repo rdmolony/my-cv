@@ -87,6 +87,7 @@
   \label{#1}{[\theexperienceCounter]}
 }
 \newcommand{\skillref}[1]{\textsuperscript{\ref{#1}}}
+\newcommand{\footerref}{\textsuperscript{*}}
 
 % Define a comma in superscript for separating references
 \newcommand{\ssep}{\textsuperscript{,\kern-0.1em}}
@@ -108,6 +109,12 @@
 \fancyhead[R]{%
 \href{https://linkedin.com/in/rowanmolony}{\raisebox{-0.25\height}\faLinkedin\ \underline{rowanmolony}} \\
   \href{https://github.com/rdmolony}{\raisebox{-0.2\height}\faGithub\ \underline{rdmolony}}
+}
+
+\fancyfoot[R]{%
+  \hrule
+  \vspace{6pt}
+  * Personal projects
 }
 
 
@@ -200,7 +207,9 @@
       \item \textbf{Programming Languages}:
       Python\skillref{TL}\ssep\skillref{PS}\ssep\skillref{MRP}\ssep\skillref{CD},
       JavaScript\skillref{TL}\ssep\skillref{PS}\ssep\skillref{MRP}\ssep\skillref{CD},
-      Nix\skillref{TL}\ssep\skillref{PS}\ssep\skillref{MRP}
+      Nix\skillref{TL}\ssep\skillref{PS}\ssep\skillref{MRP},
+      Clojure\footerref,
+      Smalltalk\footerref
 
       \item \textbf{Backend}:
       Server-Side Rendered HTML (Django, HTMX)\skillref{TL}\ssep\skillref{MRP},
@@ -229,10 +238,7 @@
       \item \textbf{Data Analysis}:
       Linear Optimization (bespoke)\skillref{PS},
       Data Wrangling (Pandas)\skillref{TL}\ssep\skillref{PS}\ssep\skillref{MRP}\ssep\skillref{CD},
-      Workflow Orchestration (Ploomber, Prefect)\skillref{CD},
-      Geospatial (GeoPandas)\skillref{CD},
-      Machine Learning (scikit-learn)\skillref{CD},
-      Network Analysis (networkx)\skillref{CD}
+      Workflow Orchestration (Ploomber, Prefect)\skillref{CD}
 
   \end{itemize}
 \end{minipage}
