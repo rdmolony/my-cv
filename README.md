@@ -1,6 +1,6 @@
 # My CV
 
-I'm currently looking for a job, so I'm putting together a CV.
+I put together a CV in `LaTEX` because CVs are still expected to be static documents (i.e. rendered to `pdf` or printed) & `LaTEX` is a great tool for making beautiful documents. 
 
 > [!NOTE]
 > [The initial version](https://github.com/rdmolony/my-cv/commit/13640bcdd951764217280e42b570b76783d4c1b2) was based on a template created by my friend [odowdneil@gmail.com](mailto:odowdneil@gmail.com)
