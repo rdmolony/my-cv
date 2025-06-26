@@ -79,19 +79,6 @@
     \vspace{5pt}
 }
 
-% Define a reference command that links to the label
-% & add a counter for experience entries
-\newcounter{experienceCounter}
-\newcommand{\experience}[1]{
-  \refstepcounter{experienceCounter}
-  \label{#1}{[\theexperienceCounter]}
-}
-\newcommand{\skillref}[1]{\textsuperscript{\ref{#1}}}
-\newcommand{\footerref}{\textsuperscript{*}}
-
-% Define a comma in superscript for separating references
-\newcommand{\ssep}{\textsuperscript{,\kern-0.1em}}
-
 % ----------------
 % Header & Footer
 % ----------------
@@ -130,7 +117,7 @@
 
 \cventry
   {Software Engineer / Founder}
-  {Thalora Ltd \experience{TL}}
+  {Thalora Ltd}
   {Jan 2024 - Present}
   {
       \item 
@@ -140,7 +127,7 @@
 
 \cventry
   {Software Engineer / Co-Founder}
-  {PowerScope Ltd \experience{PS}}
+  {PowerScope Ltd}
   {Aug 2024 - Apr 2025}
   {
       \item
@@ -155,7 +142,7 @@
 
 \cventry
   {Web Developer}
-  {Mainstream Renewable Power (MRP) \experience{MRP}}
+  {Mainstream Renewable Power (MRP)}
   {Oct 2021 - Dec 2023}
   {
       \item
@@ -170,7 +157,7 @@
 
 \cventry
   {Data Analyst}
-  {Codema \experience{CD}}
+  {Codema}
   {Aug 2019 - Oct 2021}
   {
       \item 
