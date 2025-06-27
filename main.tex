@@ -21,6 +21,7 @@
 % Miscellaneous
 \usepackage{fontawesome5}  % for icons
 \usepackage[unicode, draft=false]{hyperref}  % for hyperlinks
+\usepackage{tikz}  % for drawing pill shapes
 
 % ------
 % Style
@@ -65,19 +66,43 @@
 %----------
 % Commands
 %----------
+
+% Command for skill pills
+\definecolor{pillcolor}{RGB}{229,231,235}
+\newcommand{\skillpill}[1]{%
+  \tikz[baseline=(text.base)]\node[
+    rectangle,
+    rounded corners=15pt,
+    fill=pillcolor,
+    text=textcolor,
+    font=\small,
+    inner sep=8pt,
+    inner ysep=4pt
+  ] (text) {#1};%
+}
+
+% Command for skills section
+\newcommand{\skills}[1]{%
+  \foreach \skill in {#1} {%
+    \skillpill{\skill}\hspace{0pt}%
+  }%
+}
+
 \newcommand{\cventry}[5]{%
     \begin{tabularx}{\linewidth}{ L{0.65\linewidth} R{0.3\linewidth} }
-      \textbf{#1, #2} & #3 \\[4pt]
+      \textbf{#1, #2} & #3 \\[2pt]
+      \multicolumn{2}{@{}X@{}}{\skills{#4}} \\[4pt]
       \multicolumn{2}{@{}X@{}}{%
         \begin{minipage}[t]{0.97\textwidth}
           \begin{itemize}[nosep, leftmargin=2em, itemsep=4pt]
-            #4
+            #5
           \end{itemize}
         \end{minipage}
       }
     \end{tabularx}
     \vspace{5pt}
 }
+
 
 % ----------------
 % Header & Footer
@@ -119,16 +144,17 @@
   {Software Engineer / Founder}
   {Thalora Ltd}
   {Jan 2024 - Present}
+  {Python, Django, PostgreSQL, Docker, Nix, Azure, Nbdev}
   {
       \item 
       I formed Thalora Ltd through which I continued working with Mainstream Renewable Power (see below) on a consultancy basis.
-      \vspace{5pt}
   }
 
 \cventry
   {Software Engineer / Co-Founder}
   {PowerScope Ltd}
   {Aug 2024 - Apr 2025}
+  {Python, TypeScript, NodeJS, React, AWS, Lambda, DynamoDB, Docker, Nix, Terraform, CDK, Nbdev}
   {
       \item
       I initially co-founded PowerScope Ltd to create a software tool to empower solar panel installers to assess the investment case for battery storage, \& in the process, I grew:
@@ -144,6 +170,7 @@
   {Web Developer}
   {Mainstream Renewable Power (MRP)}
   {Oct 2021 - Dec 2023}
+  {Python, Django, PostgreSQL, Docker, Nix, Azure, Nbdev}
   {
       \item
       I fully rebuilt the backend of the MRP data platform, StationManager, to resolve its reliability issues, \& in the process, I grew:
@@ -159,6 +186,7 @@
   {Data Analyst}
   {Codema}
   {Aug 2019 - Oct 2021}
+  {Python, Pandas, scikit-learn, Jupyter, Docker, Git}
   {
       \item 
       I was tasked with modelling Dublin's built environment (as part of the \href{https://www.codema.ie/our-work/dublin-region-energy-master-plan/}{\raisebox{-0.05\height}\faGlobe\ \underline{Dublin Energy Masterplan}}) to enable estimating the impact of local \& regional energy policy decisions on the Dublin energy system. To deliver this, I built a reproducible data wrangling toolkit and energy model (available at \href{https://github.com/codema-dev/projects}{\raisebox{-0.1\height}\faGithub\ \underline{codema-dev/projects}}).
@@ -173,6 +201,7 @@
   {Master \& Bachelor of Mechanical Engineering}
   {Trinity College, Dublin}
   {Sept 2014 - June 2019}
+  {C++, MATLAB}
   {
     \item 
     Awarded a 1st class honours for both degrees and a gold medal for averaging over 80\% in undergraduate results.
