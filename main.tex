@@ -72,7 +72,7 @@
 \newcommand{\skillpill}[1]{%
   \tikz[baseline=(text.base)]\node[
     rectangle,
-    rounded corners=15pt,
+    rounded corners=1ex,  % Use relative unit based on font size
     fill=pillcolor,
     text=textcolor,
     font=\small,
@@ -84,14 +84,14 @@
 % Command for skills section
 \newcommand{\skills}[1]{%
   \foreach \skill in {#1} {%
-    \skillpill{\skill}\hspace{0pt}%
+    \skillpill{\skill}\hspace{2pt}%
   }%
 }
 
 \newcommand{\cventry}[5]{%
     \begin{tabularx}{\linewidth}{ L{0.65\linewidth} R{0.3\linewidth} }
       \textbf{#1, #2} & #3 \\[2pt]
-      \multicolumn{2}{@{}X@{}}{\skills{#4}} \\[4pt]
+      \multicolumn{2}{@{}X@{}}{\skills{#4}} \\[6pt]
       \multicolumn{2}{@{}X@{}}{%
         \begin{minipage}[t]{0.97\textwidth}
           \begin{itemize}[nosep, leftmargin=2em, itemsep=4pt]
